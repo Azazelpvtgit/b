@@ -596,6 +596,10 @@ async def start_chat(user1_id: int, user2_id: int, bot) -> None:
     user1_state.current_chat = user2_id
     user2_state.current_chat = user1_id
     
+    # Set last_activity to now for both users
+    user1_state.last_activity = datetime.now()
+    user2_state.last_activity = datetime.now()
+    
     save_user_state(user1_state)
     save_user_state(user2_state)
     
